@@ -26,6 +26,9 @@ services:
           type: keyvalue
           name: terminus-cache
           property: connectionString
+    ipAllowList:
+      - source: 0.0.0.0/0
+        description: everywhere
 
   - type: worker
     name: terminus-worker
@@ -47,7 +50,3 @@ services:
   - type: keyvalue
     name: terminus-cache
     plan: free
-    
-ipAllowList:
-  - source: 0.0.0.0/0
-    description: everywhere
